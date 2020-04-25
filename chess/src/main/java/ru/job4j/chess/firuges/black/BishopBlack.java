@@ -17,7 +17,7 @@ public class BishopBlack implements Figure {
 
     @Override
     public Cell[] way(Cell source, Cell dest) {
-        int size = dest.y-source.y;
+        int size = abs(dest.y-source.y);//Math
         Cell[] steps = new Cell[size];
        // int deltaX = ...;
         //int deltaY = ...;
