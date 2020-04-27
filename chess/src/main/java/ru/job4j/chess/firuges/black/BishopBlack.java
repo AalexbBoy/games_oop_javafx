@@ -17,12 +17,14 @@ public class BishopBlack implements Figure {
 
     @Override
     public Cell[] way(Cell source, Cell dest) {
-        int size = abs(dest.y-source.y);//Math
-        Cell[] steps = new Cell[size];
-       // int deltaX = ...;
-        //int deltaY = ...;
+        int size = (dest.y-source.y);
+        Cell[] steps = new Cell[size>0?size:-size];
+        int deltaX = dest.x-source.x?1:-1;
+        int deltaY = dest.x-source.x?1:-1;
+        int x=0;
+        int y=0;
         for (int index = 0; index < size; index++) {
-          //  steps[index] = ...
+            steps[index] =Cell.FindBy(index+deltaX,index+deltaY);
         }
         return steps;
         /*throw new IllegalStateException(
