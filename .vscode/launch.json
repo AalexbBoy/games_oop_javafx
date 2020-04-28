@@ -1,0 +1,35 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BishopBlack",
+            "request": "launch",
+            "mainClass": "chess/ru.job4j.chess.firuges.black.BishopBlack",
+            "projectName": "chess"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Chess",
+            "request": "launch",
+            "mainClass": "chess/ru.job4j.chess.Chess",
+            "projectName": "chess"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - LogicTest",
+            "request": "launch",
+            "mainClass": "chess/ru.job4j.chess.LogicTest",
+            "projectName": "chess"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        }
+    ]
+}
