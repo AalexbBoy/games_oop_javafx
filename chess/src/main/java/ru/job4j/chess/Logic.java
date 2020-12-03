@@ -4,7 +4,7 @@ import ru.job4j.chess.firuges.Cell;
 import ru.job4j.chess.firuges.Figure;
 
 import java.util.Arrays;
-import java.util.Optional;
+import java.util.stream.IntStream;
 
 /**
  * //TODO add comments.
@@ -26,7 +26,7 @@ public class Logic {
         int index = this.findBy(source);
         if (index != -1) {
             Cell[] steps = this.figures[index].way(source, dest);
-            if (isFree(steps)&&steps.length > 0 && steps[steps.length - 1].equals(dest)) {
+            if (isFree(steps) && steps.length > 0 && steps[steps.length - 1].equals(dest)) {
                 rst = true;
                 this.figures[index] = this.figures[index].copy(dest);
             }
@@ -42,14 +42,10 @@ public class Logic {
     }
 
     private int findBy(Cell cell) {
-        int rst = -1;
-        for (int index = 0; index != this.figures.length; index++) {
-            if (this.figures[index] != null && this.figures[index].position().equals(cell)) {
-                rst = index;
-                break;
-            }
-        }
-        return rst;
+        return IntStream.range(0, this.figures.length - 1)
+                .filter(i -> this.figures[i] != null&&this.figures[i].position().equals(cell))
+                .findFirst()
+                .orElse(-1);
     }
 
     @Override
